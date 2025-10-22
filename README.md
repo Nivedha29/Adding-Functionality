@@ -59,6 +59,10 @@ All routes are managed with react-router-dom
 ## Demo
 
 
-https://github.com/user-attachments/assets/38ce9e0d-8830-4c92-88b6-b0091adcef36
+
+
+https://github.com/user-attachments/assets/02ed5735-190f-495e-8f3b-9d888bf67826
+
+
 
 
