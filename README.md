@@ -1,16 +1,64 @@
-# React + Vite
+## Blog Functionality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern blog application built with React and Vite, designed to demonstrate core CRUD operations (Create, Read, Update, Delete) for blog posts. The project uses React Router for navigation, Axios for data handling (API calls or local JSON), and standard React hooks for state management and lifecycle control.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project serves as a foundation for building a complete blog platform. It allows users to:
 
-## React Compiler
+View a list of all blog posts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+View individual post details
 
-## Expanding the ESLint configuration
+Create new posts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Edit or delete existing posts
+
+## Tech Stack
+
+| Category               | Technology                                              | Purpose                                       |
+| ---------------------- | ------------------------------------------------------- | --------------------------------------------- |
+| **Frontend Framework** | React (via Vite)                                        | Fast SPA development                          |
+| **Routing**            | react-router-dom                                        | Page navigation (Home, Post, Create, Edit)    |
+| **HTTP Client**        | axios                                                   | Fetching data from mock or backend API        |
+| **State Management**   | React hooks (`useState`, `useEffect`)                   | Local state and lifecycle control             |
+| **Styling**            | CSS / Tailwind / Styled Components (depending on setup) | UI styling                                    |
+| **Build Tool**         | Vite                                                    | Lightning-fast development server and bundler |
+
+
+
+## Dependencies
+"dependencies": {
+  "axios": "^1.6.0",
+  "react": "^18.3.0",
+  "react-dom": "^18.3.0",
+  "react-router-dom": "^6.22.0"
+},
+"devDependencies": {
+  "@vitejs/plugin-react": "^4.0.0",
+  "vite": "^5.0.0"
+}
+
+## Routing Setup
+
+All routes are managed with react-router-dom
+
+
+ ## Component Logic
+ 
+| Component          | Description                                      | Key Methods / Hooks        |
+| ------------------ | ------------------------------------------------ | -------------------------- |
+| **Header.jsx**     | Navigation links between Home, Create Post, etc. | —                          |
+| **PostList.jsx**   | Displays all posts fetched from API              | `useEffect`, `map()`       |
+| **PostCard.jsx**   | Displays summary (title, excerpt, date)          | Props passing              |
+| **PostForm.jsx**   | Handles new post creation/editing                | `handleSubmit`, `useState` |
+| **PostDetail.jsx** | Shows full post, comments                        | `useParams`, `axios.get()` |
+| **CommentBox.jsx** | Adds local comments                              | `useState`, `setComments`  |
+
+
+## Demo
+
+
+https://github.com/user-attachments/assets/38ce9e0d-8830-4c92-88b6-b0091adcef36
+
+
