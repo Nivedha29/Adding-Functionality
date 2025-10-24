@@ -2,7 +2,7 @@ export default function Avatar({ author, size = 40, className = "" }) {
   const name = author?.username || author?.name || "User";
   const url =
     author?.image ||
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&color=fff`;
+    `https://i.pravatar.cc/${size * 2}?u=${encodeURIComponent(name)}`;
 
   return (
     <img
