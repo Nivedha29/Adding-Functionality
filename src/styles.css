@@ -363,13 +363,13 @@ html, body, #root {
   cursor: default;
 }
 
-.avatar{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid #00b37d;
-  margin-right:8px;
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;     
+  display: inline-block; 
+  border: 2px solid #00b37d;
 }
 .article-meta{
   display:flex;
