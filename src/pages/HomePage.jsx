@@ -10,8 +10,8 @@ export default function HomePage() {
   useEffect(() => {
     (async () => {
       try {
-        const { articles } = await Api.listArticles({ limit: 10, offset: 0 });
-        setArticles(articles || []);
+        const res = await Api.listArticles({ limit: 10, offset: 0 });
+        setArticles(res?.articles ?? []);
       } catch (e) {
         setErr(e);
       }
@@ -26,16 +26,15 @@ export default function HomePage() {
       <div className="grid">
         {articles.map((a) => (
           <Link key={a.slug} to={`/articles/${a.slug}`} className="card linkcard">
-            {/* Author header with avatar */}
+            {/* Author header */}
             {a?.author && (
               <div className="article-meta" style={{ marginBottom: 8 }}>
                 <Link
                   to={`/profile/${a.author?.username || a.author?.name || "user"}`}
-                  onClick={(e) => e.stopPropagation()} 
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Avatar author={a.author} />
                 </Link>
-
                 <div className="info">
                   <Link
                     to={`/profile/${a.author?.username || a.author?.name || "user"}`}
@@ -50,14 +49,10 @@ export default function HomePage() {
                 </div>
               </div>
             )}
+
+            {/* Content */}
             <h3>{a.title}</h3>
             <p>{a.description}</p>
-
-          
-            <div className="meta">
-              <span>{a.author?.username}</span>
-              <span> • {a?.createdAt ? new Date(a.createdAt).toLocaleDateString() : ""}</span>
-            </div> 
           </Link>
         ))}
       </div>
