@@ -9,6 +9,7 @@ import ArticlePage from "./pages/ArticlePage";
 import NewArticlePage from "./pages/NewArticlePage";
 import EditArticlePage from "./pages/EditArticlePage";
 import { useAuth } from "./state/AuthContext";
+import Profile from "./pages/Profile.jsx";
 
 export default function App() {
   const { user, logout } = useAuth();
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/sign-in" element={<LoginPage />} />
           <Route path="/sign-up" element={<RegisterPage />} />
+          <Route path="/profile/:username" element={<Profile />} />
           <Route path="/profile" element={
             <PrivateRoute>
               <ProfilePage />
